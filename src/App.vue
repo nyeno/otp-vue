@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <otp-input></otp-input>
+    <otp-input @otp-complete="handleCode"></otp-input>
   </div>
 </template>
 
@@ -15,13 +15,14 @@ export default {
   data(){
     return {
       otpCode: '',
-    }
-    
+    } 
   },
   methods: {
-
+handleCode(otpCode){
+  this.otpCode = otpCode
+  console.log(otpCode)
   }
-
+  }
 }
 </script>
 
